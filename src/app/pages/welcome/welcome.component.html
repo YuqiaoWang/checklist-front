@@ -1,0 +1,38 @@
+<div class="title">
+  <h2>计划购物列表</h2>
+</div>
+
+<div class="create-btn">
+  <button  nz-button nzType="primary">添加待购物项</button>
+</div>
+
+
+<nz-table #comodityTable [nzData]="data" [nzPageSize]=12>
+  <thead>
+    <tr>
+      <th>名称</th>
+      <th>类别</th>
+      <th>品牌</th>
+      <th>件数</th>
+      <th>总价</th>
+      <th>期望时间</th>
+      <th>状态</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of comodityTable.data">
+      <td>{{item.name}}</td>
+      <td>{{item.type}}</td>
+      <td>{{item.branch}}</td>
+      <td>{{item.count}}</td>
+      <td>{{item.totalPrice}}</td>
+      <td>{{item.wantTime}}</td>
+      <td>{{item.status}}</td>
+      <td>
+        <i nz-icon nzType="check-circle" nzTheme="twotone" [nzTwotoneColor]="'#52c41a'"></i>
+        <i nz-icon nzType="minus-circle" nzTheme="twotone" [nzTwotoneColor]="'#f54545'"></i>
+      </td>
+    </tr>
+  </tbody>
+</nz-table>
